@@ -116,7 +116,7 @@ let footdata = ref([
 
   <leftSection :img="img3" :title="['Let us make','Something different']">
     <template #addon>
-      <div class="my-6 overflow-x-auto max-w-[90vw] sm:mr-[-80px] md:mr-[-40px] lg:mr-0">
+      <div class="mt-6 overflow-x-auto max-w-[90vw] sm:mr-[-80px] md:mr-[-40px] lg:mr-0 pb-3">
         <n-config-provider :theme="darkTheme">
         <n-timeline horizontal>
           <n-timeline-item content="Start"/>
