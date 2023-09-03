@@ -4,6 +4,9 @@ import hero from './hero.vue';
 import footel from './footel.vue';
 import leftSection from './leftSection.vue';
 import rightSection from './rightSection.vue';
+import img1 from "../assets/img1.png";
+import img2 from "../assets/img2.png";
+import img3 from "../assets/img3.png";
 import { ref } from 'vue';
 import { NIcon,NTimeline,NTimelineItem,NConfigProvider,darkTheme,NRate } from 'naive-ui';
 import { Video16Filled,Chat16Regular,Alert20Regular } from '@vicons/fluent';
@@ -95,7 +98,7 @@ let footdata = ref([
 <template>
   <hero />
 
-  <leftSection img="/src/assets/img1.png" :title="['I don\'t Know','What to say']">
+  <leftSection :img="img1" :title="['I don\'t Know','What to say']">
     <template #addon>
       <h2 class=" text-slate-400 text-lg md:text-xl leading-[28px] md:leading-8 my-6">I insert a paragraph here. But I still don't know what to say. How amazing it is. The thing confused me is that what will happend if the text I insert to the slot hasn't reached the height I want it to be. I think that will break the structure I have built.</h2>
 
@@ -103,7 +106,7 @@ let footdata = ref([
     </template>
   </leftSection>
 
-  <rightSection img="/src/assets/img2.png" :title="['This is a title','Just a title']">
+  <rightSection :img="img2" :title="['This is a title','Just a title']">
     <template #addon>
       <h2 class=" text-slate-400 text-lg md:text-xl leading-[28px] md:leading-8 my-6">Elit enim sed massa etiam. Mauris eu adipiscing ultrices ametodio aenean neque. Fusce ipsum orci rhoncus aliporttitor integer platea placerat.</h2>
 
@@ -111,7 +114,7 @@ let footdata = ref([
     </template>
   </rightSection>
 
-  <leftSection img="/src/assets/img3.png" :title="['Let us make','Something different']">
+  <leftSection :img="img3" :title="['Let us make','Something different']">
     <template #addon>
       <div class="my-6 overflow-x-auto max-w-[90vw] sm:mr-[-80px] md:mr-[-40px] lg:mr-0">
         <n-config-provider :theme="darkTheme">
