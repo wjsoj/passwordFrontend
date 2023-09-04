@@ -12,6 +12,9 @@ let hasUpper = ref(false)
 let hasNumber = ref(true)
 let hasSymbol = ref(false)
 let queue = ref([])
+if (localStorage.getItem('password')) {
+  queue.value = JSON.parse(localStorage.getItem('password'))
+}
 let isMdScreen = ref(window.innerWidth >= 640)
 
 // 把password复制到剪贴板
@@ -75,6 +78,12 @@ function generatePassword() {
     // 从队列尾部删除
     queue.value.pop()
   }
+  localStorage.setItem('password', JSON.stringify(queue.value))
+}
+
+function clear() {
+  queue.value = []
+  localStorage.removeItem('password')
 }
 </script>
 
@@ -150,7 +159,7 @@ function generatePassword() {
         </div>
       </div>
 
-      <button class=" bg-lime-500 hover:bg-lime-600 bg-opacity-75 rounded-full text-white py-2 px-8 text-base md:text-lg mx-4 mt-4" @click="queue=[]">Clear History</button>
+      <button class=" bg-lime-500 hover:bg-lime-600 bg-opacity-75 rounded-full text-white py-2 px-8 text-base md:text-lg mx-4 mt-4" @click="clear()">Clear History</button>
     </div>
   
   </div>
